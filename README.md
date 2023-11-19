@@ -1,5 +1,6 @@
 # Tazama - Movie Recommendation Web App
-![Tazama Landing Page](../tazama/movies/static/movies/images/cover10.jpeg)
+![Screenshot from 2023-11-15 17-39-46](https://github.com/Mythamor/Tazama-A-Movie-Recommendation-Web-App/assets/113252977/1121486d-2c65-423f-859a-5a39d735b649)
+
 
 ## Project Inspiration:
 > For the reel story behind the tazama, visit my blog post.   
