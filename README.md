@@ -1,9 +1,9 @@
-# Tazama - Movie Recommendation Web App
+# Tazama - Django Movie Recommendation Web App 
 ![Screenshot from 2023-11-15 17-39-46](https://github.com/Mythamor/Tazama-A-Movie-Recommendation-Web-App/assets/113252977/1121486d-2c65-423f-859a-5a39d735b649)
 
-
-## Project Inspiration:
-> For the reel story behind the tazama, visit my blog post.   
+## [Project Inspiration Blog. The Reel Story Behind Tazama](https://medium.com/@MithamoBeth/tazama-a-django-movie-recommendation-web-app-062a62a08228)
+> >   ![android-chrome-192x192](https://github.com/Mythamor/Tazama-A-Movie-Recommendation-Web-App/assets/113252977/6330f758-e433-4bc1-abc8-f96d2fddac84)
+> What's the reel story behind the tazama, visit my blog post.
 [Tazama: A Movie Recommendation web app](https://medium.com/@MithamoBeth/tazama-a-django-movie-recommendation-web-app-062a62a08228)
 
 ## Introduction
@@ -19,7 +19,7 @@ Tazama is not just a movie recommendation app; it's a cinematic masterpiece! �
 ### Key Features:
 > 🎥 Personalized movie recommendations based on similar movies.
 > 🌐 Mobile responsive web app with playful UI.
-> ✨ A mini-blog for a social touch. Users can register, login, create profiles, and, update and delete blogs. Social features will be added to v2 of the app.
+> ✨ A mini-blog for a social touch. Users can register, login, create profiles, and, update and delete blogs. Social features including likes, comments, shares will be added to v2 of the app.
 
 
 ## Recommendation Engine
@@ -51,7 +51,8 @@ source venv/bin/activate
 ```
 
 ## Deployment: 
-> [tazama](tazama.tech)
+> What's your next watch during Nextfilx and Chill? Visit [tazama](tazama.tech) for a recommendation
+> Tazama is deployed on a custom-configured Linux server on Digital Ocean
 
 ## Author:
 > Mithamo Beth
