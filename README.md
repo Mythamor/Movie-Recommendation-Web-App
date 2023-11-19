@@ -3,7 +3,7 @@
 
 ## [Project Inspiration Blog. The Reel Story Behind Tazama](https://medium.com/@MithamoBeth/tazama-a-django-movie-recommendation-web-app-062a62a08228)
 > >   ![android-chrome-192x192](https://github.com/Mythamor/Tazama-A-Movie-Recommendation-Web-App/assets/113252977/6330f758-e433-4bc1-abc8-f96d2fddac84)
-> What's the reel story behind the tazama, visit my blog post.
+> What's the reel story behind the tazama? Visit my blog post.
 [Tazama: A Movie Recommendation web app](https://medium.com/@MithamoBeth/tazama-a-django-movie-recommendation-web-app-062a62a08228)
 
 ## Introduction
@@ -51,8 +51,9 @@ source venv/bin/activate
 ```
 
 ## Deployment: 
-> What's your next watch during Nextfilx and Chill? Visit [tazama](tazama.tech) for a recommendation
-> Tazama is deployed on a custom-configured Linux server on Digital Ocean
+> What's your next watch during Nextfilx and Chill? Visit [tazama](tazama.tech) for a recommendation.
+
+>> Tazama is deployed on a custom-configured Linux server on Digital Ocean
 
 ## Author:
 > Mithamo Beth
