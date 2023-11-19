@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.background {
+    /*background: linear-gradient(to bottom, #FBD490, #F7A5CB);*/
+    background-image: url('../movies/images/reco_cover2.jpeg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    margin-top: -50px;
+}
+
+.gallery {
+    display: flex;
+    left: calc(50% - 330px);
+}
+
+.card {
+    position: relative;
+    left: 0px;
+    width: 230px;
+    height: 320px;
+    background: linear-gradient(to right, #93A5CF, #EAEfE9);
+    border-radius: 8px;
+    transition: 1s ease-in-out;
+    overflow: hidden;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
+}
+
+.card:not(:first-child) {
+    margin-left: -45px;
+}
+
+.card:hover {
+    transform: translateY(-16px);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card:hover ~ .card {
+    left: 55px;
+}
+
+.card img {
+    height: 250px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.card h6{
+    text-align: center;
+    color: #333333 !important;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+    
+    
+    .gallery {
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+        align-items: center; /* Center the flex items vertically */
+    }
+
+    .card {
+        width: 100%; /* Adjust the width for smaller screens */
+        max-width: none; /* Remove the maximum width for smaller screens */
+        margin: 1% 0; /* Add some margin between cards */
+    }
+
+}

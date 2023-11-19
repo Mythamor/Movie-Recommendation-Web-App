@@ -1,0 +1,539 @@
+/*** Ubuntu/Lora Montserrat/Poppins Fonts ***/
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat:wght@300;400;700&family=Poppins&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Monoton&family=Permanent+Marker&effect=emboss|shadow-multiple&display=swap');
+
+
+/********** Base Settings **********/
+:root{
+    --black: #fff;
+    --title-font: 'Ubuntu';
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    scroll-behavior: smooth;
+    font-family: 'Lora', serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    overflow-x: hidden;
+    /*font-family: 'Monoton', cursive;*/
+}
+
+.container {
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+}
+
+#hero button {
+    cursor: pointer;
+    padding: 10px 30px;
+    padding-right: 50px;
+    border-radius: 0px;
+    border-right: groove 2px ;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+    background: linear-gradient(to right, orangered, yellow ) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.28);
+    transition: transform 0.2s ease-in-out;
+    font-variant: small-caps;
+    font-style: italic;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+
+button:hover{
+    transform: scale(1.05);
+}
+
+/********** Navigation Styles **********/
+
+/*.logo img{
+    width: 50px;
+    height: 50px;
+}*/
+
+.background {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+    z-index: 1;
+}
+
+.logo {
+    color: white;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-left: 10px;
+ }
+
+ 
+ .logo b {
+     font-family: 'Monoton';
+     font-weight: 700;
+ }
+
+.logo span{
+    color: orangered;
+    font-weight: 700;
+    font-family: 'Monoton';
+}
+
+.tagline {
+    font-size: 16px;
+    color: white;
+    font-style: italic;
+    font-family: 'Lora', cursive;
+    display: inline-flex;
+    width: 100%;
+    padding: 10px;
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    overflow: hidden;
+}
+
+.slide2 {
+    color: orangered;
+    animation: color-change 2s;
+}
+
+
+.tagline span {
+    display: inline-block;
+    white-space: nowrap;
+    opacity: 0;
+    animation: slide-in 10s infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    z-index: 1;
+}
+
+@keyframes slide-in {
+    0%, 50% {
+        transform: translateX(-130%);
+        opacity: 1;
+    }
+    50%, 100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+@keyframes color-change {
+    0%, 50% {
+        color: orangered;
+    }
+    50%, 100% {
+        color: yellow;
+    }
+}
+
+
+/************** Navigation Bar *********************/
+.menu__wrapper {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    z-index: 2;
+}
+
+.menu__bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding-right: 24px;
+    gap: 32px;
+    background: linear-gradient(#000000, #4D4855);
+    height: 100px;
+    opacity: 0.9;
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: flex;
+    height: 32px;
+    width: 32px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    align-items: center;
+    gap: 24px;
+    padding: 0px;
+}
+
+
+.navigation > li {
+    transition: color 0.3s ease-in-out;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: white;
+}
+
+
+.navigation > li > a {
+    color: white;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: 500;
+    background-image: linear-gradient(
+            to right,
+            #000000,
+            #4D4855 50%,
+            white 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 3px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.2s ease-in-out;
+
+}
+
+.navigation > li > a::before{
+    content: '';
+    background: coral;
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: all 0.2s ease-in-out;
+}
+
+.navigation > li >a:hover::before{
+    width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+    .menu-icon {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    
+    .navigation {
+        display: none;
+    }
+
+    #hero .hero-title {
+        font-size: 1.8rem;
+        left: 1rem;
+    }
+    
+    .menu-icon {
+        display: block;
+    }
+
+    .navigation--mobile {
+        top: 100px;
+        position: absolute;
+        right: 0px;
+        display: flex;
+        padding: 80px 60px;
+        min-height: 100%;
+        background: linear-gradient(#000000, #4D4855);
+        z-index: 3 !important;
+        gap: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        opacity: 0.95;
+        animation: fadein 03s forwards;
+    
+    }
+
+    .navigation > li {
+        font-size: 4rem;
+        
+    }
+
+    .search-bar {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        max-width: 400px;
+    }
+
+    .search-bar form input[type=search] {
+        display: block;
+        width: 100%;
+        max-width: 200px;
+        align-items: stretch;
+        padding: 15px;
+        outline: none;
+        background: transparent;
+        font-size: 1rem;
+        font-weight: 500;
+     }
+
+     .search-bar form input[type=submit]{
+        display: block;
+        padding: 10px 15px;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: 600;
+        font-size: 1.2rem;
+        box-shadow: 0 0 5px goldenrod, 
+                    0 0 25px goldenrod;
+        transition: transform 0.2s ease-in-out;
+
+     }
+
+     .search-bar form input[type=submit]:hover {
+        box-shadow: 0 0 5px goldenrod,
+                0 0 25px goldenrod, 0 0 50px goldenrod,
+                0 0 100px goldenrod, 0 0 200px goldenrod;
+     }
+    
+
+    @keyframes fadein {
+        0% {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        100% {
+            opacity: 1;
+            width: 100%;
+            height: calc(100vh - 60px);
+        }
+    }
+
+    .navigation--mobile--fadeout {
+        animation: fadeout 300ms forwards;
+    }
+
+    @keyframes fadeout {
+        0% {
+            opacity: 1;
+            width: 100%;
+            height: calc(100vh - 60px);
+        }
+
+        100% {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+    }
+
+}
+
+
+
+
+/********** Hero Styles **********/
+#hero {
+    position: relative;
+}
+
+#hero::before{
+    content: '';
+    background:url("../movies/images/cover10.jpeg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 1.0;
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    visibility: visible;
+    z-index: -10; 
+}
+ 
+
+.hero-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+ 
+.hero-title{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    left: 50px;
+    top: 40%;
+    line-height: 5rem;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: white;
+    position: relative;
+    font-family: 'Montserrat';
+ }
+
+
+ .hero-button {
+    position: relative;
+    top: 50%;
+    left: 1.8rem;
+  }
+
+.raquo {
+    color: black;
+    padding: 10px;
+    display: inline-block;
+    animation: moveRight 2s linear infinite;
+    transition: ease-in-out;
+}
+
+@keyframes moveRight{
+    0% {transform: translateX(0);}
+    50% {transform: translateX(50%);}
+    100% {transform: translateX(-10%);}
+}
+
+.search-bar{
+    background-color: #fff;
+    width: 70%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 10px 10px 10px 30px;
+    border-radius: 50px;
+    position: relative;
+    top: 40%;
+ }
+
+.search-bar form label {
+    padding: 10px 0;
+    margin:  10px 0;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+ .search-bar form{
+    display: flex;
+    align-items: center;
+    /*flex-wrap: wrap;*/
+    justify-content: space-between;
+ }
+
+ .search-bar form input[type=search] {
+    display: block;
+    width: 400px;
+    align-items: stretch;
+    padding: 15px;
+    border: 0;
+    outline: none;
+    background: transparent;
+    font-size: 1rem;
+    font-weight: 500;
+ }
+
+ .search-bar form input[type=submit]{
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    background: linear-gradient(45deg, hsla(42, 100%, 50%, 1),
+                                       hsla(42, 100%, 50%, 0.5)) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+    font-variant: small-caps;
+ }
+
+
+
+
+
+ /************* Footer ********************/
+ footer {
+	margin: 80px 0 10px;
+	text-align: center;
+}
+
+footer a{
+	text-decoration: none;
+	color: #999;
+	font-size: 40px;
+	margin: 0 10px;
+    
+}
+
+footer i {
+    transition: all .5s ease-in-out;
+}
+
+footer i:hover{
+    transform: translateY(-.30rem);
+    transform: scale(1.5);
+    background-color: black;
+    border: 1px solid goldenrod;
+    border-radius: 8px;
+    stroke: white;
+    stroke-width: 1.75;
+}
+
+
+footer hr {
+	background: #999;
+	height: 1px;
+	width: 100%;
+	border: 0;
+	margin: 20px 0;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+footer p {
+	padding-bottom: 15px;
+    color: #999;
+    font-weight: 900;
+}
+
+
+
+
+ /********//*********** Scroll Bar ****************/
+::-webkit-scrollbar{
+    width: .6rem;
+    border-radius: .5rem;
+    background-color: hsl(0, 0%, 10%);
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: hsl(0, 0%, 20%);
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: hsl(0, 0%, 30%);
+}
