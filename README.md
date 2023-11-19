@@ -7,8 +7,8 @@
 [Tazama: A Movie Recommendation web app](https://medium.com/@MithamoBeth/tazama-a-django-movie-recommendation-web-app-062a62a08228)
 
 ## How tazama works
-[![Tazama trailer!](https://github.com/Mythamor/Tazama-A-Movie-Recommendation-Web-App/assets/113252977/f3c16afc-cedb-4847-9154-71fdaa78a0f3)
-](https://www.youtube.com/watch?v=spNG2BryASg&ab_channel=MithamoBeth)
+[![Watch the video](https://img.youtube.com/vi/spNG2BryASg/maxresdefault.jpg)](https://www.youtube.com/watch?v=spNG2BryASg)
+
 Tazama is not just a movie recommendation app; it's a cinematic masterpiece! 🚀 Built with Django, HTML, CSS, Bootstrap, JS, and a dash of jQuery, it gives users personalized movie suggestions and also features a mini-blog with a social twist. Lights, camera, interaction! 🍿 It incorporates a powerful recommendation engine that utilizes content-based filtering with Natural Language Processing (NLP) and cosine similarity.
 
 ## Why Django?
