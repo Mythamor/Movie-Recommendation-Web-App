@@ -24,7 +24,7 @@ Tazama is not just a movie recommendation app; it's a cinematic masterpiece! ðŸš
 
 ## NLP Recommendation Engine
 The movie recommender system is powered by a robust dataset containing over 9000 movies and one million tags. Leveraging the capabilities of Natural Language Processing (NLP) and employing cosine similarity, this engine provides users with personalized movie recommendations. By analyzing genres and tags, the system suggests movies that align with the user's taste, creating a tailored and enjoyable viewing experience.
-[Recommendation Notebook]("tazama/recommendation-engine/Movie_Recommendation_System.ipynb")
+[Recommendation Notebook]("recommendation-engine/Movie_Recommendation_System.ipynb")
 
 ## Installation
 
