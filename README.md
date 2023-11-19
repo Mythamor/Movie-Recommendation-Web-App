@@ -16,15 +16,15 @@ Tazama is not just a movie recommendation app; it's a cinematic masterpiece! �
 4. The template engine, middleware support, and Django signals enhanced the app's functionality, while scalability features ensured efficient handling of a growing user base. 
 5. The focus on security, extensive community support, and well-documented resources made Django the ideal framework for crafting Tazama's efficient and secure architecture.
 
-### Key Features:
-> 🎥 Personalized movie recommendations based on similar movies.
-> 🌐 Mobile responsive web app with playful UI.
-> ✨ A mini-blog for a social touch. Users can register, login, create profiles, and, update and delete blogs. Social features including likes, comments, shares will be added to v2 of the app.
+### Key Tazama Features:
+> 1. 🎥 Personalized movie recommendations based on similar movies.
+> 2. 🌐 Mobile responsive web app with playful UI.
+> 3. ✨ A mini-blog for a social touch. Users can register, login, create profiles, and, update and delete blogs. Social features including likes, comments, shares will be added to v2 of the app.
 
 
-## Recommendation Engine
+## NLP Recommendation Engine
 The movie recommender system is powered by a robust dataset containing over 9000 movies and one million tags. Leveraging the capabilities of Natural Language Processing (NLP) and employing cosine similarity, this engine provides users with personalized movie recommendations. By analyzing genres and tags, the system suggests movies that align with the user's taste, creating a tailored and enjoyable viewing experience.
-
+[Recommendation Notebook]("tazama/recommendation-engine/Movie_Recommendation_System.ipynb")
 
 ## Installation
 
