@@ -13,7 +13,7 @@ Tazama is not just a movie recommendation app; it's a cinematic masterpiece! �
 
 ## Why Django?
 1. The Object-Relational Mapping (ORM) system provided a smooth interaction with the database, simplifying data operations. 
-2. Leveraging the Django REST Framework, I built a robust API, ensuring seamless communication between the front end and backend. 
+2. Leveraging the Django REST Framework, I built a robust API, ensuring seamless communication between the front end and back end. 
 3. Django's built-in authentication system secured user data, and the admin interface facilitated easy management of the movie dataset. 
 4. The template engine, middleware support, and Django signals enhanced the app's functionality, while scalability features ensured efficient handling of a growing user base. 
 5. The focus on security, extensive community support, and well-documented resources made Django the ideal framework for crafting Tazama's efficient and secure architecture.
@@ -21,7 +21,7 @@ Tazama is not just a movie recommendation app; it's a cinematic masterpiece! �
 ### Key Tazama Features:
 > 1. 🎥 Personalized movie recommendations based on similar movies.
 > 2. 🌐 Mobile responsive web app with playful UI.
-> 3. ✨ A mini-blog for a social touch. Users can register, login, create profiles, and, update and delete blogs. Social features including likes, comments, shares will be added to v2 of the app.
+> 3. ✨ A mini-blog for a social touch. Users can register, log in, create profiles, and, update and delete blogs. Social features including likes, comments, and shares will be added to v2 of the app.
 
 
 ## NLP Recommendation Engine
@@ -53,7 +53,7 @@ source venv/bin/activate
 ```
 
 ## Deployment: 
-> What's your next watch during Nextfilx and Chill? Visit [tazama](tazama.tech) for a recommendation.
+> What's your next watch during Nextfilx and Chill? Visit [tazama](https://tazama.tech) for a recommendation.
 
 >> Tazama is deployed on a custom-configured Linux server on Digital Ocean
 
