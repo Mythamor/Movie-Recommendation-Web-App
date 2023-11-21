@@ -55,7 +55,7 @@ source venv/bin/activate
 ## Deployment: 
 > What's your next watch during Nextfilx and Chill? Visit [tazama](https://tazama.tech) for a recommendation.
 
->> Tazama is deployed on a custom-configured Linux server on Digital Ocean
+>> Tazama is deployed on a custom-configured Nginx and Gunicorn Linux server on Digital Ocean
 
 ## Author:
 > Mithamo Beth
