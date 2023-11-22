@@ -27,7 +27,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-API_KEY = "5f8c4580f32863abb80e9aa0ca00509e"
+API_KEY = ""
 
 
 def get_movie_details(movie):
