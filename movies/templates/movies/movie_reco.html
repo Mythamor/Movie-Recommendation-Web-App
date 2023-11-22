@@ -3,7 +3,7 @@
 
     <!------------------ Recommendation Cards -------------------------->
     <section id="recommendations">
-      <div class="container">
+      <div class="background">
         <h3 style="text-align:center; color: #333333;">Recommendations on {{ request.GET.query }}</h3>
         <div class="gallery">
           {% for movie in details_list%}
@@ -20,6 +20,8 @@
         </div>
       </div>
   </section>
+
+{% endblock %}
     
 </body>
 </html>

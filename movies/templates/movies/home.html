@@ -8,13 +8,17 @@
   <meta name="keywords" content="Python, Django, Movies, Recommendations, Blog, Tazama" />
   <meta name="description" content="Movie Recommendation Engine, Movie Recommendation Web App" />
   <meta name="author" content="Mithamo Beth" />
+
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'movies/images/favicon/favicon-16x16.png' %}" />
+  
+  <!--  JQuery -->
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" type="text/css" href="{% static 'movies/home.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'movies/about.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'movies/movies.css' %}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'movies/images/favicon/favicon-16x16.png' %}" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Ubuntu&effect=neon|outline|emboss|shadow-multiple" />
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu&effect=neon|outline|emboss|shadow-multiple" />
   <script src="https://kit.fontawesome.com/98d7ad45d3.js" crossorigin="anonymous"></script>
   <title>Tazama</title>
 </head>
@@ -62,7 +66,7 @@
                      id="movie" 
                      name="query" 
                      value="{{ request.GET.query }}" 
-                     placeholder="What movie should tazama recommed?" 
+                     placeholder="What movie should tazama recommend?" 
                      autocomplete="on" 
                      title="Movie suggestions: 
                             Die Hard(1990),
@@ -238,7 +242,7 @@
   <!--------------------- Footer Section -------------->
   <section id="footer">
     <footer>
-      <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="mithamo-beth" data-version="v1" style="margin-bottom:5px;"><a class="badge-base__link LI-simple-link" href="https://ke.linkedin.com/in/mithamo-beth?trk=profile-badge">Connect with Mithamo</a></div>
+      <p>Connect with Mithamo</p>
       <div>
         <a href="https://medium.com/@MithamoBeth/tazama-a-django-movie-recommendation-web-app-062a62a08228" target="_blank">
           <i class="fa-brands fa-medium" style="color: #a2a7ae"></i>
@@ -261,7 +265,7 @@
  <!-- JQuery JS & UI -->
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script type="text/javascript" src="{% static '../static/movies/js/home.js' %}"></script>
+  <script type="text/javascript" src="{% static '../static/movies/js/home.js' %}"></script>  
   <script>
     $(function () {
       $("#movie").autocomplete({
@@ -288,8 +292,7 @@
 
     // Javascript for menu burger and close image
     const burgerImagePath = "{% static 'movies/images/menu.png' %}";
-    const closeImagePath = "{% static 'movies/images/close.png' %}";
-    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>       
+    const closeImagePath = "{% static 'movies/images/close.png' %}";    
   </script>
 </body>
 </html>
