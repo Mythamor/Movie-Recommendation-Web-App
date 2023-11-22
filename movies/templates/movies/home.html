@@ -62,7 +62,7 @@
                      id="movie" 
                      name="query" 
                      value="{{ request.GET.query }}" 
-                     placeholder="Search movie..." 
+                     placeholder="What movie should tazama recommed?" 
                      autocomplete="on" 
                      title="Movie suggestions: 
                             Die Hard(1990),
@@ -83,10 +83,11 @@
 
   <!--------------------- How Tazama Works -------------->
   <section id="about">
-    <div>
-       <h1 class="about-title">How <span>tazama</span> works</h1>
-    </div>
+
     <div class="about container">
+      <div>
+        <h1 class="about-title">How <span>tazama</span> works</h1>
+     </div>
       <article class="card">
         <div class="card-background">
           <img src="{% static 'movies/images/search1.jpeg' %}" alt="search" />
@@ -155,53 +156,55 @@
     </div>
     <div class="movie-list "></div>
     <div class="action-buttons">
- 
-      <a href="https://twitter.com/JustBmm/status/1725900653027860833" target="_blank"
-         class="action-button action-button--primary">
-        <i class="fa-regular fa-heart" style="color: #333333; font-size:24px;"></i>
-          Twitter
-      </a>   
-    
-      <a aria-expanded="false" 
-        href="https://medium.com/@MithamoBeth/tazama-a-django-movie-recommendation-web-app-062a62a08228" target="_blank"
-        class=" action-button action-button--primary">
-        <i class="fa-solid fa-hands-clapping" style="color: #333333; font-size:24px;"></i>
-          Medium
-      </a>      
+        <a href="https://twitter.com/JustBmm/status/1725900653027860833" target="_blank"
+          class="action-button action-button--primary">
+          <i class="fa-regular fa-heart" style="color: #333333; font-size:24px;"></i>
+            Twitter
+        </a>   
+      
+        <a aria-expanded="false" 
+          href="https://medium.com/@MithamoBeth/tazama-a-django-movie-recommendation-web-app-062a62a08228" target="_blank"
+          class=" action-button action-button--primary">
+          <i class="fa-solid fa-hands-clapping" style="color: #333333; font-size:24px;"></i>
+            Medium
+        </a>      
 
-      <a aria-expanded="false" href="https://www.linkedin.com/in/mithamo-beth/" target="_blank" 
-         class="action-button action-button--primary">
-        <i class="fa-regular fa-thumbs-up" style="color: #333333; font-size:24px;"></i>
-        LinkedIn
-      </a>
-      <button id="action-button--previous" class="action-button--horizontal-scroll"
-      type="button" disabled>
-        <i class="fa-solid fa-hand-point-left" style="color: #3b69ba;"></i>
-      </button>
-      <button id="action-button--next" class="action-button--horizontal-scroll"
-      type="button" disabled>
-        <i class="fa-solid fa-hand-point-right" style="color: #3b69ba;"></i>
-      </button>
+        <a aria-expanded="false" href="https://www.linkedin.com/in/mithamo-beth/" target="_blank" 
+          class="action-button action-button--primary">
+          <i class="fa-regular fa-thumbs-up" style="color: #333333; font-size:24px;"></i>
+          LinkedIn
+        </a>
+        <button id="action-button--previous" class="action-button--horizontal-scroll"
+        type="button" disabled>
+          <i class="fa-solid fa-hand-point-left" style="color: #3b69ba;"></i>
+        </button>
+        <button id="action-button--next" class="action-button--horizontal-scroll"
+        type="button" disabled>
+          <i class="fa-solid fa-hand-point-right" style="color: #3b69ba;"></i>
+        </button>
     </div>
-    <div style="margin-bottom: 20px;"></div>
-    <div id="bank-accounts">
+  
+
+    
+    <div id="bank-accounts" style="height:600px;">
       {% for movie_detail in details_list %}
       <a href="" class="bank-account">
         <img class="flag"
-             aria-hidden="true"
-             src={{movie_detail.poster_url}}
-             alt={{movie_detail.title}}>
+            aria-hidden="true"
+            src={{movie_detail.poster_url}}
+            alt={{movie_detail.title}}>
         <div>
-             <h3 role="presentation">
+            <h3 role="presentation">
                 {{movie_detail.title}}
-             </h3>
-             <div class="currency">
+            </h3>
+            <div class="currency">
                 {{movie_detail.genre_names}}
-             </div>
+            </div>
         </div>
       </a>
       {% endfor %}
     </div>
+    
 
     {% if is_paginated %}
         <nav>
@@ -235,15 +238,15 @@
   <!--------------------- Footer Section -------------->
   <section id="footer">
     <footer>
-      <p>Connect with Mithamo</p>
+      <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="mithamo-beth" data-version="v1" style="margin-bottom:5px;"><a class="badge-base__link LI-simple-link" href="https://ke.linkedin.com/in/mithamo-beth?trk=profile-badge">Connect with Mithamo</a></div>
       <div>
         <a href="https://medium.com/@MithamoBeth/tazama-a-django-movie-recommendation-web-app-062a62a08228" target="_blank">
           <i class="fa-brands fa-medium" style="color: #a2a7ae"></i>
         </a>
-        <a href="https://twitter.com/JustBmm/status/1725900653027860833" target="_blank">
+        <a href="https://www.linkedin.com/in/mithamo-beth/" target="_blank">
           <i class="fa-brands fa-linkedin" style="color: #a2a7ae"></i>
         </a>
-        <a href="https://www.linkedin.com/in/mithamo-beth/" target="_blank">
+        <a href="https://twitter.com/JustBmm/status/1725900653027860833" target="_blank">
           <i class="fa-brands fa-square-x-twitter" style="color: #a2a7ae"></i>
         </a>
         <a href="https://github.com/Mythamor/Tazama-A-Movie-Recommendation-Web-App" target="_blank">
@@ -282,6 +285,11 @@
         },
       });
     });
+
+    // Javascript for menu burger and close image
+    const burgerImagePath = "{% static 'movies/images/menu.png' %}";
+    const closeImagePath = "{% static 'movies/images/close.png' %}";
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>       
   </script>
 </body>
 </html>

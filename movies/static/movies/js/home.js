@@ -11,12 +11,12 @@ const toggleMenu = () => {
   const burgerMenu = document.querySelector(".menu-icon");
   const src = burgerMenu.getAttribute("src");
 
-  const isBurger = src === "{% static 'movies/images/menu.png' %}";
+  const isBurger = (src === burgerImagePath );
 
   const iconName = isBurger ?
-      "{% static 'movies/images/close.png' %}"
+      closeImagePath
       :
-      "{% static 'movies/images/menu.png' %}";
+      burgerImagePath;
 
   burgerMenu.setAttribute(
       "src", iconName

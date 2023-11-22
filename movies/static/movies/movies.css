@@ -41,6 +41,7 @@
     gap: 8px;
     scroll-snap-align: start;
     width: 100%;
+    margin: 0 15px;
 }
 
 .action-button {
@@ -188,10 +189,10 @@
 
 
 .flag {
-    object-fit: cover;
+    
     width: 100%;
     border-radius: 10%;
-    height: 170px;
+    height: auto;
     width: 220px;
     min-width: 220px;
     border: 1px solid var(--secondary-hover);

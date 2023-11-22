@@ -1,103 +1,36 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'movies/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Python, Django, Movies, Recommendation, Blog, Tazama" />
-    <meta name="description" content="Movie Recommendation Engine" />
-    <meta name="author" content="Mithamo Beth" />
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'blog/images/favicon/favicon-16x16.png' %}" />
-    <link rel="stylesheet"
-       href="https://fonts.googleapis.com/css?family=Ubuntu&effect=neon|outline|emboss|shadow-multiple" />
-    <link rel="stylesheet" href="" />
-    <link rel="stylesheet" href="" />
-    <script src="https://kit.fontawesome.com/98d7ad45d3.js" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'movies/movie_list.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'movies/movies.css' %}">
-
-    {% if title %}
-        <title>tazama-{{ title }}</title>
-    {% else %}
-        <title>tazama</title>
-    {% endif %}
-</head>
-<body>
-    <header class="site-header">
-        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-          <div class="container">
-            <a class="navbar-brand mr-4" href="{% url 'movies-home' %}">Tazama</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarToggle">
-              <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'movies-home' %}">Recommend</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'movie_list' %}">Movies</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'blog-home' %}">Zaunity</a>
-                </li>
-              </ul>
-              <!-- Navbar Right Side -->
-              <ul class="navbar-nav ml-auto">
-              {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'post-create' %}">New Post</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'profile' %}">Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                </li>
-              {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Login</a>
-                </li>
-              {% endif %}
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </header>
-
+{% block content %}
        <!-------------------------- Movie Genres -------------------------->
-      <div id="genres">
-        <div>
-            <h3>{{movie_genres}}</h3>
-        </div>
-        <div class="action-buttons">
-              {% for genre in genres %}          
-                <a href="{% url 'movie_genres' genres=genre.name %}?order_by=-genre.name" class="action-button action-button--primary">
-                  <!--<i class="fa-solid fa-video" style="color: #3b69ba;"></i>-->
-                  {{genre.name}}
-                </a>
-              {% endfor %}
-        </div>
-      </div>
+      <div class="container mt-4">
+        <form method="GET" action="{% url 'movie_genres' genres='selected_genre' %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="genreSelect">Select Genre:</label>
+            <select class="form-control" id="genreSelect" name="selected_genre">
+                <option value="" selected>All Genres</option>
+                {% for genre in genres %}
+                    <option value="{{ genre.name }}">{{ genre.name }}</option>
+                {% endfor %}
+            </select>
+          </div>
+          <button type="submit" class="btn btn-outline-info mt-4">Filter</button>
+        </form>
+    </div>
 
      
-    <div class="container-fluid mt-5 px-4">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3">
+    <div class="container mt-5 px-4">
+      <div class="row row-cols-2 row-cols-sm-3 row-cols-md-5 row-cols-lg-6 g-3">
           {% for movie_detail in details_list%}
               <div class="col mb-4">
-                <div class="card shadow-md">
-                  <img src="{{movie_detail.poster_url}}" alt={{movie.title}}>
+                <div class="card-deck shadow-md">
+                  <img src="{{movie_detail.poster_url}}" alt={{movie.title}} style="height:200px;">
                   <div class="card-body">
-                    <h4 class="card-text">{{movie_detail.title}}</h4>
-                    <p class="card-text">{{movie_detail.genre_names}}</p>
-                    <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="card-text mt-3">{{movie_detail.title}}</h5>
+                    <!--<p class="card-text">{{movie_detail.genre_names}}</p>-->
+                    <div class="d-flex justify-content-start">
                       <div class="btn-group">
-                        <a href="" class="btn btn-primary">{{movie_detail.tagline}}</a>
+                        <a href="" class="btn btn-outline-secondary fixed-width">{{movie_detail.tagline}}</a>
                       </div>
                       <small class="text-muted"></small>
                     </div>
@@ -134,34 +67,6 @@
       {% endif %}
     </div>
 
+{% endblock %}
 
-
-    <!--------------------- Footer Section -------------->
-    <section id="footer">
-      <footer>
-        <p>Connect with Mithamo</p>
-        <div>
-          <a href="https://medium.com/@MithamoBeth/tazama-a-django-movie-recommendation-web-app-062a62a08228" target="_blank">
-            <i class="fa-brands fa-medium" style="color: #a2a7ae"></i>
-          </a>
-          <a href="https://twitter.com/JustBmm/status/1725900653027860833" target="_blank">
-            <i class="fa-brands fa-linkedin" style="color: #a2a7ae"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/mithamo-beth/" target="_blank">
-            <i class="fa-brands fa-square-x-twitter" style="color: #a2a7ae"></i>
-          </a>
-          <a href="https://github.com/Mythamor/Tazama-A-Movie-Recommendation-Web-App" target="_blank">
-            <i class="fa-brands fa-github" style="color: #a2a7ae"></i>
-          </a>
-          <hr />
-          <p>Copyright &copy 2023 tazama. All Rights Reserved</p>
-        </div>
-      </footer>
-    </section>
-    
-    <!-- Bootstrap JS and Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-</body>
-</html>
 

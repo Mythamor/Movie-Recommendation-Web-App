@@ -30,10 +30,10 @@
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
           <div class="container">
             <a class="navbar-brand mr-4" href="{% url 'movies-home' %}">Tazama</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
               <!--- Navbar Middle Side-->
               <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
@@ -105,22 +105,23 @@
   <!--------------------- Footer Section -------------->
   <section id="footer">
     <footer>
-      <p>Connect with Mithamo</p>
+      <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="mithamo-beth" data-version="v1" style="margin-bottom:5px;"><a class="badge-base__link LI-simple-link" href="https://ke.linkedin.com/in/mithamo-beth?trk=profile-badge">Connect with Mithamo</a></div>
       <div>
         <a href="https://medium.com/@MithamoBeth/tazama-a-django-movie-recommendation-web-app-062a62a08228" target="_blank">
           <i class="fa-brands fa-medium" style="color: #a2a7ae"></i>
         </a>
-        <a href="https://twitter.com/JustBmm/status/1725900653027860833" target="_blank">
+        <a href="https://www.linkedin.com/in/mithamo-beth/" target="_blank">
           <i class="fa-brands fa-linkedin" style="color: #a2a7ae"></i>
         </a>
-        <a href="https://www.linkedin.com/in/mithamo-beth/" target="_blank">
+        <a href="https://twitter.com/JustBmm/status/1725900653027860833" target="_blank">
           <i class="fa-brands fa-square-x-twitter" style="color: #a2a7ae"></i>
         </a>
         <a href="https://github.com/Mythamor/Tazama-A-Movie-Recommendation-Web-App" target="_blank">
           <i class="fa-brands fa-github" style="color: #a2a7ae"></i>
         </a>
         <hr />
-        <p>Copyright &copy 2023 tazama. All Rights Reserved</p>
+        <p>Copyright &copy 2023 tazama. All Rights Reserved.</p>
+        <p><a href="{% url 'disclaimer' %}" style="font-size: 16px;">Disclaimer</a>| Licenses</p>
       </div>
     </footer>
   </section>
