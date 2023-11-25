@@ -7,22 +7,21 @@
         <h3 style="text-align:center; color: #333333;">Recommendations on {{ request.GET.query }}</h3>
         <div class="gallery">
           {% for movie in details_list%}
-            <div class="card" style="max-height:200px;">
+            <div class="card">
               <figure>
                 <img src="{{movie.poster_url}}" alt="{{movie.title}} poster">
               </figure>
-              <h6>{{movie.title}}</h6>
+              <div class="movie-title">
+                <h6>{{movie.title}}</h6>
+              </div>
             </div>
           {% endfor %}
         </div>
         <div>
-           <button type="button" class="btn btn-info p-3" style="font-size:1.5rem" onclick="goBack()">Get More Recommendations</button>
+           <button type="button" class="btn btn-info p-3 m-5" style="font-size:1.5rem" onclick="goBack()">Get More Recommendations</button>
         </div>
       </div>
   </section>
 
 {% endblock %}
     
-</body>
-</html>
-

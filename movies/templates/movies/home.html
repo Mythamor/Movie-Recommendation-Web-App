@@ -60,7 +60,7 @@
         </div>
         <div id="search_form" class="search-bar" style="display: none">
           <form method="GET" action="{% url 'movie_recommend' %}">
-            <div class="movie_input">
+            <div class="movie-input">
               <label for="movie">Search for a movie by title or year (1900 - 2018)</label>
               <input type="search" 
                      id="movie" 
@@ -89,154 +89,161 @@
   <section id="about">
 
     <div class="about container">
-      <div>
-        <h1 class="about-title">How <span>tazama</span> works</h1>
-     </div>
-      <article class="card">
-        <div class="card-background">
-          <img src="{% static 'movies/images/search1.jpeg' %}" alt="search" />
+        <div class="about-header">
+          <h1 class="about-title">How <span>tazama</span> works</h1>
         </div>
-        <div class="content">
-          <h1>Search</h1>
-          <p>
-            Over 9000 movies to choose from. Search by movie title or year (1900 - 2018).
-            <br>
-            <a href="{% url 'movie_list' %}" title="movielist">Available Movies</a>
-          </p>
-        </div>
-        <div class="action-bottom-bar">
-          <a href="{% url 'movie_list' %}">
-            Search
-            <i class="fa-solid fa-chevron-right" style="color: #4178d8"></i>
-          </a>
-        </div>
-      </article>
 
-      <article class="card">
-        <div class="card-background">
-          <img src="{% static 'movies/images/recom.jpeg' %}" alt="discover" />
-        </div>
-        <div class="content">
-          <h1>Discover</h1>
-          <p>
-            Get instant and unlimited recommendations based on similar movies you've watched before<br>
-            <a href="{% url 'movie_list' %}" title="movielist">Available Movies</a>
-          </p>
-        </div>
-        <div class="action-bottom-bar">
-          <a href="{% url 'movie_list' %}">
-            Discover
-            <i class="fa-solid fa-chevron-right" style="color: #4178d8"></i>
-          </a>
-        </div>
-      </article>
+        <div class="about-features">
+          <article class="card">
+            <div class="card-background">
+              <img src="{% static 'movies/images/search1.jpeg' %}" alt="search" />
+            </div>
+            <div class="content">
+              <h1>Search</h1>
+              <p>
+                Over 9000 movies to choose from. Search by movie title or year (1900 - 2018) to get a recommendation.
+                <br>
+                <a href="{% url 'movies-home' %}" title="movielist">Get a recommendation</a>
+              </p>
+            </div>
+            <div class="action-bottom-bar">
+              <a href="{% url 'movie_list' %}">
+                Search
+                <i class="fa-solid fa-chevron-right" style="color: #4178d8"></i>
+              </a>
+            </div>
+          </article>
 
-      <article class="card">
-        <div class="card-background">
-          <img src="{% static 'movies/images/cover2.jpg' %}" alt="register" />
+          <article class="card">
+            <div class="card-background">
+              <img src="{% static 'movies/images/recom.jpeg' %}" alt="discover" />
+            </div>
+            <div class="content">
+              <h1>Discover</h1>
+              <p>
+                Click on Get a recommendation button, 
+                select a movie from the suggestion box. 
+                Click on the recommend button & get watching<br>
+                <a href="{% url 'movie_list' %}" title="movielist">Available Movies</a>
+              </p>
+            </div>
+            <div class="action-bottom-bar">
+              <a href="{% url 'movie_list' %}">
+                Discover
+                <i class="fa-solid fa-chevron-right" style="color: #4178d8"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-background">
+              <img src="{% static 'movies/images/cover2.jpg' %}" alt="register" />
+            </div>
+            <div class="content">
+              <h1>Register</h1>
+              <p>
+                Sign up and join the vibrant tazama movie community,  <b><i style="color: orangered;">Zaunity.</b></i>
+                Get access to blogging and, interact with other movie lovers.<br>
+                <a href="{% url 'register' %}" title="signup">Sign Up</a>
+              </p>
+            </div>
+            <div class="action-bottom-bar">
+              <a href="{% url 'register' %}">
+                Register
+                <i class="fa-solid fa-chevron-right" style="color: #4178d8"></i>
+              </a>
+            </div>
+          </article>
         </div>
-        <div class="content">
-          <h1>Register</h1>
-          <p>
-            Sign up and join the tazama blogging community, <b><i style="color: orangered;">Zaunity.</b></i>
-            Interact with other movie lovers.<br>
-            <a href="{% url 'register' %}" title="signup">Sign Up</a>
-          </p>
-        </div>
-        <div class="action-bottom-bar">
-          <a href="{% url 'register' %}">
-            Register
-            <i class="fa-solid fa-chevron-right" style="color: #4178d8"></i>
-          </a>
-        </div>
-      </article>
-    </div>
-  </section>
+  </div>
+</section>
 
   <!--------------------- Available Movies -------------->
   <section id="movie">
-    <div>
-      <h1 class="movie-title" style="margin:30px; padding-bottom:30px;">Featured<span> tazama</span> movies</h1>
-    </div>
-    <div class="movie-list "></div>
-    <div class="action-buttons">
-        <a href="https://twitter.com/JustBmm/status/1725900653027860833" target="_blank"
-          class="action-button action-button--primary">
-          <i class="fa-regular fa-heart" style="color: #333333; font-size:24px;"></i>
-            Twitter
-        </a>   
-      
-        <a aria-expanded="false" 
-          href="https://medium.com/@MithamoBeth/tazama-a-django-movie-recommendation-web-app-062a62a08228" target="_blank"
-          class=" action-button action-button--primary">
-          <i class="fa-solid fa-hands-clapping" style="color: #333333; font-size:24px;"></i>
-            Medium
-        </a>      
-
-        <a aria-expanded="false" href="https://www.linkedin.com/in/mithamo-beth/" target="_blank" 
-          class="action-button action-button--primary">
-          <i class="fa-regular fa-thumbs-up" style="color: #333333; font-size:24px;"></i>
-          LinkedIn
-        </a>
-        <button id="action-button--previous" class="action-button--horizontal-scroll"
-        type="button" disabled>
-          <i class="fa-solid fa-hand-point-left" style="color: #3b69ba;"></i>
-        </button>
-        <button id="action-button--next" class="action-button--horizontal-scroll"
-        type="button" disabled>
-          <i class="fa-solid fa-hand-point-right" style="color: #3b69ba;"></i>
-        </button>
-    </div>
-  
-
-    
-    <div id="bank-accounts" style="height:600px;">
-      {% for movie_detail in details_list %}
-      <a href="" class="bank-account">
-        <img class="flag"
-            aria-hidden="true"
-            src={{movie_detail.poster_url}}
-            alt={{movie_detail.title}}>
-        <div>
-            <h3 role="presentation">
-                {{movie_detail.title}}
-            </h3>
-            <div class="currency">
-                {{movie_detail.genre_names}}
-            </div>
+    <div class="movie-list">
+        <div class="movie-header">
+          <h1 class="movie-title" style="margin:30px; padding-bottom:30px;">Featured<span> tazama</span> movies</h1>
         </div>
-      </a>
-      {% endfor %}
-    </div>
+        <div class="social-section">
+          <div class="action-buttons">
+              <a href="https://twitter.com/JustBmm/status/1725900653027860833" target="_blank"
+                class="action-button action-button--primary">
+                <i class="fa-regular fa-heart" style="color: #333333; font-size:24px;"></i>
+                  Twitter
+              </a>   
+            
+              <a aria-expanded="false" 
+                href="https://medium.com/@MithamoBeth/tazama-a-django-movie-recommendation-web-app-062a62a08228" target="_blank"
+                class=" action-button action-button--primary">
+                <i class="fa-solid fa-hands-clapping" style="color: #333333; font-size:24px;"></i>
+                  Medium
+              </a>      
+
+              <a aria-expanded="false" href="https://www.linkedin.com/in/mithamo-beth/" target="_blank" 
+                class="action-button action-button--primary">
+                <i class="fa-regular fa-thumbs-up" style="color: #333333; font-size:24px;"></i>
+                LinkedIn
+              </a>
+              <button id="action-button--previous" class="action-button--horizontal-scroll"
+              type="button" disabled>
+                <i class="fa-solid fa-hand-point-left" style="color: #3b69ba;"></i>
+              </button>
+              <button id="action-button--next" class="action-button--horizontal-scroll"
+              type="button" disabled>
+                <i class="fa-solid fa-hand-point-right" style="color: #3b69ba;"></i>
+              </button>
+          </div>
+        </div>
+    
+        <div id="bank-accounts" style="height:400px;">
+      
+          {% for movie_detail in details_list %}
+          <a href="#" class="bank-account">
+            <img class="flag"
+                aria-hidden="true"
+                src={{movie_detail.poster_url}}
+                alt={{movie_detail.title}}>
+            <div>
+                  <h3 role="presentation"><a href="#">
+                    {{movie_detail.title}}
+                  </h3>
+                <div class="currency">
+                    {{movie_detail.genre_names}}
+                </div>
+            </div>
+          </a>
+          {% endfor %}
+
+        </div>
     
 
-    {% if is_paginated %}
-        <nav>
-            <ul class="pagination justify-content-center" style="margin:20px 0">
-                {% if page_obj.has_previous %}
-                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Prev</a></li>
-                {% else %}
-                    <li class="page item disabled"></li>
-                {% endif %}
+        {% if is_paginated %}
+          <nav>
+              <ul class="pagination justify-content-center" style="margin:20px 0">
+                  {% if page_obj.has_previous %}
+                      <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Prev</a></li>
+                  {% else %}
+                      <li class="page item disabled"></li>
+                  {% endif %}
 
-                {% for pages in page_obj.paginator.page_range %}
-                    {% if page_obj.number == pages %}
-                        <li class="page-item active"><a class="page-link "href="#movie">{{ pages }}</a></li>
-                    {% else %}
-                        <li class="page-item"><a class="page-link" href="?page={{pages}}">{{pages}}</a></li>
-                    {% endif %}
-                {% endfor %}
+                  {% for pages in page_obj.paginator.page_range %}
+                      {% if page_obj.number == pages %}
+                          <li class="page-item active"><a class="page-link "href="#movie">{{ pages }}</a></li>
+                      {% else %}
+                          <li class="page-item"><a class="page-link" href="?page={{pages}}">{{pages}}</a></li>
+                      {% endif %}
+                  {% endfor %}
 
-                {% if page_obj.has_next %}
-                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
-                {% else %}
-                    <li class="page-item disabled"></li>
-                {% endif %}
-            </ul>
-        </nav>
-    {% endif %}
-
-
+                  {% if page_obj.has_next %}
+                      <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+                  {% else %}
+                      <li class="page-item disabled"></li>
+                  {% endif %}
+              </ul>
+          </nav>
+        {% endif %}
+    
+      </div>
   </section>
 
   <!--------------------- Footer Section -------------->
@@ -282,7 +289,7 @@
             },
           });
         },
-        minLength: 2,  // Minimum characters before triggering autocomplete
+        minLength: 1,  // Minimum characters before triggering autocomplete
         select: function (event, ui) {
           // Handle the selection of a movie
           console.log("Selected movie:", ui.item.label);

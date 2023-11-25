@@ -61,6 +61,11 @@ img {
     clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
 }
 
+.search-bar form input[type=submit]:hover {
+    box-shadow: 0 0 5px goldenrod,
+            0 0 25px goldenrod, 0 0 50px goldenrod,
+            0 0 100px goldenrod, 0 0 200px goldenrod;
+ }
 
 button:hover{
     transform: scale(1.05);
@@ -179,8 +184,9 @@ button:hover{
 .menu-icon {
     cursor: pointer;
     display: flex;
-    height: 32px;
-    width: 32px;
+    height: 48px;
+    width: 48px;
+    
 }
 
 .navigation {
@@ -298,6 +304,7 @@ button:hover{
     transition: ease-in-out;
 }
 
+
 @keyframes moveRight{
     0% {transform: translateX(0);}
     50% {transform: translateX(50%);}
@@ -409,30 +416,38 @@ footer p {
 
 /************* Web Responsiveness *******************/
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 800px) {
     .menu-icon {
         display: none;
     }
 }
 
-@media only screen and (max-width: 500px) {
-    .menu-icon {
+
+@media only screen and (max-width: 800px) {
+   
+    .navigation {
         display: none;
     }
 
 
     #hero .hero-title {
-        font-size: 1rem;
+        top: 30%;
+        font-size: 1.3rem;
         left: 1rem;
     }
 
+   .hero-button{
+        position: absolute;
+        top: 65%;
+   }
+
     #hero button {
         cursor: pointer;
-        padding: 10px;
+        padding: 15px;
         padding-right: 50px;
         border-right: groove 2px ;
         font-weight: 600;
-        font-size: 1rem;
+        font-size: 1.2rem;
         clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
     }
 
@@ -443,7 +458,7 @@ footer p {
     .raquo {
         color: black;
         padding: 5px;
-    
+    }
     
     .menu-icon {
         display: block;
@@ -467,70 +482,59 @@ footer p {
     }
 
     .navigation > li {
-        font-size: 4rem;
-        
+        font-size: 3rem;
+        line-height: 4.5rem;
     }
+
+    .navigation > li:hover{
+        transform: scale(1.2);
+    }
+
 
     .search-bar {
-        width: 90%; /* Adjust width for smaller screens */
-        padding: 10px; /* Adjust padding for smaller screens */
-      
+        height: 200px;
+        position: relative;
+        top: 30%;
     }
 
+    .search-bar form {
+		display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+	}   
 
-     .search-bar form input[type=submit]:hover {
+
+    .search-bar form input[type=search] {
+		border-bottom: 1px solid #ddd;
+		width: 100%;
+		margin-bottom: 20px;
+		margin-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	.search-bar form input[type=submit] {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, 50%);
+	}
+
+    .search-bar form input[type=submit]:hover {
         box-shadow: 0 0 5px goldenrod,
                 0 0 25px goldenrod, 0 0 50px goldenrod,
                 0 0 100px goldenrod, 0 0 200px goldenrod;
      }
-    }    
 
-}
+     .movie-input label {
+        text-wrap: wrap;
+     }
 
+  }
 
+  
 
-@media only screen and (max-width: 600px) {
-    
-    .navigation {
-        display: none;
-    }
-
-    #hero .hero-title {
-        font-size: 1.5rem;
-        left: 1rem;
-    }
-    
-    .menu-icon {
-        display: block;
-    }
-
-    .navigation--mobile {
-        top: 100px;
-        position: absolute;
-        right: 0px;
-        display: flex;
-        padding: 80px 60px;
-        min-height: 100%;
-        background: linear-gradient(#000000, #4D4855);
-        z-index: 3 !important;
-        gap: 15px;
-        flex-direction: column;
-        align-items: flex-start;
-        opacity: 0.95;
-        animation: fadein 03s forwards;
-    
-    }
-
-    .navigation > li {
-        font-size: 4rem;
-        
-    }
-
-    .search-bar {
-       width: 90%;
-       padding: 10px;
-    }
-    
+/********* Key Frames ***************/
 
     @keyframes fadein {
         0% {
@@ -563,21 +567,6 @@ footer p {
         }
     }
 
-}
-
-@media only screen and (max-width: 820px) {
-
-    .search-bar {
-        width: 90%; /* Adjust width for smaller screens */
-        padding: 10px; /* Adjust padding for smaller screens */
-    }
-
-}
-
-
-
-
-
  /********//*********** Scroll Bar ****************/
 ::-webkit-scrollbar{
     width: .6rem;
@@ -592,4 +581,28 @@ footer p {
 
 ::-webkit-scrollbar-thumb:hover{
     background-color: hsl(0, 0%, 30%);
+}
+
+
+/****** Autocomplete UI ***********/
+
+/* Add a specific style for your autocomplete suggestions */
+.ui-autocomplete {
+    background-color: white; /* Set the background color to white */
+    border: 1px solid #ccc; /* Add a border for better visibility */
+    max-height: 200px; /* Set a maximum height for the suggestions box */
+    max-width: 400px;
+    overflow-y: auto; /* Enable vertical scrolling if there are many suggestions */
+}
+
+/* Style for individual suggestion items */
+.ui-menu-item {
+    padding: 8px; /* Adjust padding as needed */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+
+/* Style for the highlighted (selected) suggestion item */
+.ui-menu-item-wrapper.ui-state-active {
+    background-color: #007bff; /* Change the background color for the selected suggestion */
+    color: white; /* Change the text color for the selected suggestion */
 }

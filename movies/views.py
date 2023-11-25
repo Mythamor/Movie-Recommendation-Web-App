@@ -108,13 +108,6 @@ class MovieList(ListView):
 class MovieDetail(DetailView):
     model = Movie
     
-    def get_object(self):
-        object = super(MovieDetail, self).get_object()
-        object.view_count += 1
-        object.save()
-        return object
-    
-
 
 class MovieCategory(ListView):
     """It filters movies by categories/ genres
@@ -162,7 +155,7 @@ class MovieSearch(ListView):
     model = Movie
     paginate_by = 5
     template_name = 'movie_list.html'
-    max_suggestions = 10
+    max_suggestions = 20
 
     def get_dataframe(self):
         # Load your DataFrame (replace 'your_dataframe.csv' with the actual file path)

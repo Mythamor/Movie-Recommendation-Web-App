@@ -4,7 +4,7 @@ from .views import home, MovieList, MovieDetail, MovieCategory, MovieSearch, dis
 urlpatterns = [
     path("", home, name="movies-home"),
     path('movies/', MovieList.as_view(), name="movie_list"),
-    path("movies/<int:pk>/", MovieDetail.as_view(), name="movie_detail"),
+    path('movies/<int:pk>/', MovieDetail.as_view(template_name='movies/movie_detail.html'), name='movie_info'),
     path('movies/genres/<str:genres>/', MovieCategory.as_view(), name='movie_genres'),
     path('search/', MovieSearch.as_view(), name='movie_search'),
     path('recommend/', recommend, name='movie_recommend'),

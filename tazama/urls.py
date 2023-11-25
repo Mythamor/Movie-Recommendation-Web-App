@@ -31,7 +31,7 @@ urlpatterns = [
     path('movies/genres/<str:genres>/', movie_views.MovieCategory.as_view(), name='movie_genres'),
     path('search/', movie_views.MovieSearch.as_view(), name='movie_search'),
     path('disclaimer/', blog_views.disclaimer, name='disclaimer'),
-    path('movies/<int:pk>', movie_views.MovieDetail.as_view(template_name='movies/movie_detail.html'), name='movie_detail'),
+    path('movies/<int:pk>/', movie_views.MovieDetail.as_view(template_name='movies/movie_detail.html'), name='movie_info'),
     path('recommend/', movie_views.recommend, name='movie_recommend'),
     path('register/', user_views.register, name='register'),
     path('profile/', user_views.profile, name='profile'),

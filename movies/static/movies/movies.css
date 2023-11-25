@@ -13,23 +13,30 @@
 .movie-list{
     /*container*/
     display: flex;
+    flex-direction: column;
     color: var(--content-primary);
-    max-width: 800px;
-    width: 100%;
-    min-width: 300px;
-   /* margin: 120px auto;*/
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0px 0px 20px 0px;
+   
 }
 
-.movie-title{
+.movie-header{
     font-size: 2.5rem;
-    margin-bottom: 8rem;
+    margin: 0 auto;
     text-align: center;
-    padding-bottom: 30px;
+    margin-bottom: 70px;
 }
 
 .movie-title span{
     color: orangered;
 }
+
+.social-section {
+    display: flex;
+    flex-direction: row;
+}
+
 
 .action-buttons {
     position: relative;
@@ -151,7 +158,7 @@
     background: var(--secondary1);
     padding: 0px 0px 8px 0px;
     border-radius: 16px;
-    height: 250px;
+    height: 320px;
     transition: all 0.2s ease-in-out;
     width: 250px;
     display: flex;
@@ -162,15 +169,17 @@
     scroll-snap-align: start;
 }
 
-.bank-account h2 {
-    color: var(--content-primary);
+.bank-account h3 {
+    color: #003366;
+    font-weight: 700;
     font-size: 1.075rem;
     letter-spacing: normal;
     overflow-wrap: normal;
     white-space: wrap;
     font-weight: 700;
     line-height: 1.25rem;
-    padding: 5px 8px;
+    padding-left: 8px;
+    align-items: flex-start;
 }
 
 .bank-account .currency {
@@ -180,7 +189,7 @@
     letter-spacing: -.006em;
     line-height: 133%;
     overflow-wrap: break-word;
-    padding-top: 5px 8px;
+    padding: 8px;
 }
 
 .bank-account:hover {
